@@ -53,9 +53,7 @@
 			<a-box
 				position="0 2 -5"
 				class="interactable"
-				sound="src: #intro;
-					positional: false;
-					on: click"
+				clicktoplay="src: #intro"
 				animation="property: position;
 						to: 0 2.1 -5;
 						dur: 2000; 
@@ -81,14 +79,26 @@
 						startEvents: click"
 				emitonclick>
 			</a-box>
-			
-			<a-entity camera
+			<a-entity id="analyser">
+
+			</a-entity>
+			<a-light type='ambient'
+				analysereffect="analyser: #analyser">
+			</a-light>
+
+			<!-- audioanalyzer=src:#intro" -->
+			<a-entity camera id="firstcamera"
 				position="0 1.6 0"
 				look-controls>
 				<a-entity 
 					cursor="rayOrigin: mouse"
 					raycaster="objects: .interactable">
 				</a-entity>
+			</a-entity>
+			<a-entity camera id="secondcamera"
+				position="0 4 0"
+				look-controls>
+				
 			</a-entity>
 
 		</a-scene>

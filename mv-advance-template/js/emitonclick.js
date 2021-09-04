@@ -15,6 +15,8 @@ AFRAME.registerComponent('emitonclick', {
             this.el.removeAttribute('class');
 
             //TODO: add audio analyser component to analyser element
+            let analyser = document.getElementById("analyser");
+            analyser.setAttribute('audioanalyser', 'src: #intro');
         }
     }
 });

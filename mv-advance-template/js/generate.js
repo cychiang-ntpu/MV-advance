@@ -22,19 +22,24 @@ AFRAME.registerComponent('generatefloor', {
     },
 
     tick: function (time, timeDelta) {
+
         
         //count on start
         if (this.start) {
-            this.oldTime = time;
+            this.startTime = time;
             this.start = false;
         }
 
         //TODO: check if time passsss
-        if (true) {
+        if (/*this.start == true && */ (time-this.startTime)>3000) {
             //TODO: change position here
-
-
-
+            let pos = this.el.getAttribute('position');
+            pos.z += 0.05;
+            if(pos.z>=5) {
+                pos.z = 0;
+            }
+            //console.log(pos);
+            this.el.setAttribute('position', pos);
         }
     },
 
