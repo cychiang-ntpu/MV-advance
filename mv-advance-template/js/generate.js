@@ -56,5 +56,12 @@ AFRAME.registerComponent('generatefloor', {
                 el.play();
             }, i*200);
         }
+        for(let i=0; i<30; i++){
+            setTimeout(()=>{
+                let el = planepool.requestEntity();
+                el.setAttribute('position', '-3 0 '+(i*-1));
+                el.play();
+            }, i*200);
+        }
     }
 });
